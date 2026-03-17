@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal" created-in="RM-253.31033.144">
+    <data-source name="odin_book: test" uuid="18d16e2c-8ab7-455f-aa87-e534071a13f2">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" />
+      <schema-mapping />
+    </data-source>
+    <data-source name="odin_book: production" uuid="f1daf6f3-7b43-4053-b529-87462f0ed793">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" />
+      <user-name>odin_book</user-name>
+      <schema-mapping />
+    </data-source>
+    <data-source name="odin_book: development" uuid="c89f2ce6-b14a-474b-ba32-fff33d7be902">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" />
+      <user-name>zameer</user-name>
+      <schema-mapping />
+    </data-source>
+  </component>
+</project>
