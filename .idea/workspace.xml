@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="57ba38f9-d235-4931-bbd5-8e5ae94336f7" name="Changes" comment="" />
+    <list default="true" id="57ba38f9-d235-4931-bbd5-8e5ae94336f7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/controllers/users/sessions_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/odin_book.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/odin_book.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,18 +21,21 @@
       <entry key="_/Users/zameer/RubymineProjects/odin_rails/odin_book" value="3B4PNHVnef2FCYQhkuuksJe3RaM" />
     </persistenceIdMap>
   </component>
+  <component name="GeneratorOptions">
+    <option name="VCS_SHOW_CONFIRMATION" value="true" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "zameerunionswiss"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;zameerunionswiss&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
-    "url": "https://github.com/zameerunionswiss/odin_book",
+    "url": "https://github.com/zameerunionswiss/odin_book.git",
     "accountId": "5dbfb638-1cb7-4558-bbe3-bb6e127542a4"
   }
 }]]></component>
@@ -38,15 +50,16 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RailsGeneratorsRunner#FAILED_RELOADS_PROPERTY": "1",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "com.intellij.lang.ruby.rbs.tools.collection.workspace.sync.RbsCollectionUpdateProjectActivity#LAST_UPDATE_TIMESTAMP": "1773754685059",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "/Users/zameer/RubymineProjects/odin_rails/odin_book",
     "nodejs_package_manager_path": "npm",
     "ruby.structure.view.model.defaults.configured": "true",
+    "settings.editor.selected.configurable": "preferences.sourceCode.H2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -146,6 +159,8 @@
       <option name="presentableId" value="Default" />
       <updated>1773745329287</updated>
       <workItem from="1773745330938" duration="248000" />
+      <workItem from="1773754626078" duration="5054000" />
+      <workItem from="1773815875852" duration="18725000" />
     </task>
     <servers />
   </component>
