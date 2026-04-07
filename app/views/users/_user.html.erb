@@ -3,5 +3,8 @@
     <strong>Name:</strong>
     <%= user.name %>
   </p>
-
+  <% if user.avatar.attached? do%>
+    <%= image_tag user.avatar %>
+  <% end %>
+  <% end %>
 </div>

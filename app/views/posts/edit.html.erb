@@ -1,4 +1,9 @@
-<% content_for :title, "Editing post" %>
+
+  <% content_for :title, "Editing post" %>
+  <%= turbo_frame_tag "post_ad" do%>
+
+    <%= "This is a comment" %>
+  <% end %>
 
 <h1>Editing post</h1>
 

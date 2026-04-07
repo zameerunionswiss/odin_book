@@ -1,17 +1,23 @@
-<div id="<%= dom_id post %>">
-  <p>
-    <strong>Title:</strong>
-    <%= post.title %>
-  </p>
 
-  <p>
-    <strong>Content:</strong>
-    <%= post.content %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= post.user.name %>
-  </p>
-
+<div id="<%= dom_id(post) %>" class="col-md-6 col-lg-4 mb-4">
+  <div class="card h-100 shadow-sm border-top">
+    <div class="card-body d-flex flex-column ">
+      <div class="d-flex justify-content-between align-items-start mb-2 border">
+        <span class="badge bg-primary-subtle text-primary fw-semibold">Post</span>
+        <small class="text-muted"><%= post.created_at.strftime("%b %d, %Y") %></small>
+      </div>
+<!--      <h2> the email of the user:<%#= post.user.email %></h2>-->
+      <h5 class="card-title fw-bold mb-2"><%= post.title %></h5>
+      <p class="card-text text-muted flex-grow-1"><%= truncate(post.content, length: 120) %></p>
+      <div class="d-flex gap-2 mt-3">
+        <%= link_to "Read more", post, class: "btn btn-sm btn-outline-primary", data: { turbo_frame: "_top"} %>
+        <%= link_to "Edit", edit_post_path(post), class: "btn btn-sm btn-outline-secondary", data: { turbo_frame: "_top"} %>
+        <%= link_to "Delete", post, method: :delete,
+                    data: { confirm: "Are you sure?", turbo_frame: "_top" },
+                    class: "btn btn-sm btn-outline-danger" %>
+        <button id="posts" data-controller="posts" data-action="posts#toggleComments"> Comment</button>
+      </div>
+<!--      <div>___________________ -- - - -- - - -- - - - -- -  __ __ _ __ _ __ - -- - -</div>-->
+    </div>
+  </div>
 </div>

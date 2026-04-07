@@ -1,0 +1,8 @@
+<div data-controller="posts" data-posts.url-target="<%= all_comments_path %>">
+  <%= turbo_frame_tag "post_ad" do %>
+  <%= "This is a comment" %>
+                                                   <%= button_to "This is my button to switch partials", dashboard_post_path  ,data:{turbo_frame_tag: 'post_ad'} %><br>
+  <%= link_to "The other MaGiC button to switch to posts partials", posts_path,  data:{turbo_frame: "post_ad"}%><br>
+
+<% end %>
+</div>

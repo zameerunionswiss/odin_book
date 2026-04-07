@@ -4,10 +4,12 @@ class PostsController < ApplicationController
   # GET /posts or /posts.json
   def index
     @posts = Post.all
+    @page = posts_path
   end
 
   # GET /posts/1 or /posts/1.json
   def show
+    @user = User.find_by(email: current_user.email)
   end
 
   # GET /posts/new
@@ -18,6 +20,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    @post = Post.find(params[:id])
   end
 
   # POST /posts or /posts.json
@@ -67,6 +70,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :content)
+      params.require(:post).permit(:title, :content, :avatar)
     end
 end

@@ -14,6 +14,12 @@ Rails.application.routes.draw do
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
+
+  post 'dashboard/switch_partials', to: 'dashboard#switch', as: :switch_partials
+  get '/dashboard', to: 'dashboard#index', as: :dashboard
+  post '/dashboard', to: 'dashboard#index', as: :dashboard_post
+  get '/comments', to: 'comments#index', as: :all_comments
+
   # Defines the root path route ("/")
    root "dashboard#index"
 end

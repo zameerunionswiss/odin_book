@@ -46,6 +46,13 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+
+
+    if @user.update(user_params)
+      redirect_to user_path, notice: "Profile updated!"
+    else
+      render :edit
+    end
   end
 
   # DELETE /users/1 or /users/1.json
@@ -66,6 +73,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:name)
+      params.require(:user).permit(:name, :avatar)
     end
 end

@@ -1,4 +1,17 @@
 <p style="color: green"><%= notice %></p>
+<div class="profile-header">
+  <% if @user.avatar.attached? %>
+    <%= image_tag @user.avatar.variant(resize_to_fill: [150, 150]),
+                  class: "profile-avatar",
+                  alt: "#{@user.name}'s profile picture" %>
+  <% else %>
+    <div class="border border-1 rounded-circle bg-success align-items-center align-content-center text-center" style="width: 4vw; height: 4vw">
+      <%= @user.name.first.upcase %><%= @user.name.at(1).upcase %>
+    </div>
+  <% end %>
+
+  <h1><%= @user.name %></h1>
+</div>
 
 <%= render @post %>
 

@@ -1,6 +1,7 @@
 class Users::SessionsController < Devise::SessionsController
   before_action :redirect_if_signed_in, only: [:new, :create]
 
+
   private
 
   def redirect_if_signed_in

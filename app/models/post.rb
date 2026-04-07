@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :user
+  broadcasts_to ->(post) {"posts"}, inserts_by: :prepend
 
   validates :title, presence: true
   validates :user, presence: true
