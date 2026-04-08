@@ -8,6 +8,13 @@
     <p><%= f.text_field :name, autofocus: true, autocomplete: "email" %></p>
   </div>
 
+  <div class="field" data-controller="registration">
+    <p><%= f.label :avatar %></p>
+    <p><%= f.file_field :avatar, accept: "image/*", autofocus: true, data: {action: "change -> registration#previewAvatar"} %></p>
+    <img id="avatar-preview" class="d-none mt-2 rounded-circle border" width="100" height="100" style="object-fit: contain;" />
+
+  </div>
+
   <div class="field">
     <p><%= f.label :email %></p>
     <p><%= f.email_field :email, autofocus: true, autocomplete: "email" %></p>
@@ -25,6 +32,7 @@
     <p><%= f.label :password_confirmation %></p>
     <p><%= f.password_field :password_confirmation, autocomplete: "new-password" %></p>
   </div>
+
 
   <div class="actions">
     <%= f.submit "Sign up" %>

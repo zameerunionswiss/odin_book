@@ -12,9 +12,10 @@
       <div class="d-flex gap-2 mt-3">
         <%= link_to "Read more", post, class: "btn btn-sm btn-outline-primary", data: { turbo_frame: "_top"} %>
         <%= link_to "Edit", edit_post_path(post), class: "btn btn-sm btn-outline-secondary", data: { turbo_frame: "_top"} %>
-        <%= link_to "Delete", post, method: :delete,
-                    data: { confirm: "Are you sure?", turbo_frame: "_top" },
-                    class: "btn btn-sm btn-outline-danger" %>
+        <%= button_to "Delete", post_path(post),
+                      method: :delete,
+                      data: { turbo_confirm: "Are you sure?" },
+                      class: "btn btn-sm btn-outline-danger" %>
         <button data-posts-target="toggleBtn" data-action="posts#toggleComment"> Comment</button>
       </div>
 <!--      <div>___________________ -- - - -- - - -- - - - -- -  __ __ _ __ _ __ - -- - -</div>-->

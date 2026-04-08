@@ -10,6 +10,8 @@ class PostsController < ApplicationController
   # GET /posts/1 or /posts/1.json
   def show
     @user = User.find_by(email: current_user.email)
+    pp @user.avatar
+    pp @user.avatar.attached?
   end
 
   # GET /posts/new
