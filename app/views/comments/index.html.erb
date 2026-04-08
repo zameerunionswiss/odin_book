@@ -1,6 +1,6 @@
 <div data-controller="posts" data-posts.url-target="<%= all_comments_path %>">
 <%= turbo_frame_tag "post_ad" do %>
-  <%= "This is a comment" %>
+  <%= render @comments %>
   <%= button_to "This is my button to switch partials", dashboard_post_path,
                 method: :get,
                 data:{turbo_frame: 'post_ad'},

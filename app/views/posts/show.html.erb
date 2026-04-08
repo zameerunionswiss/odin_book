@@ -21,3 +21,7 @@
 
   <%= button_to "Destroy this post", @post, method: :delete %>
 </div>
+
+  <%# @post.comments.each do |comment| %>
+    <%= render @post.comments %>
+  <%# end %>

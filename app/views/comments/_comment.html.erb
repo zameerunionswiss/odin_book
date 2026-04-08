@@ -1,8 +1,35 @@
 <div data-controller="posts" data-posts.url-target="<%= all_comments_path %>">
-  <%= turbo_frame_tag "post_ad" do %>
-  <%= "This is a comment" %>
-                                                   <%= button_to "This is my button to switch partials", dashboard_post_path  ,data:{turbo_frame_tag: 'post_ad'} %><br>
-  <%= link_to "The other MaGiC button to switch to posts partials", posts_path,  data:{turbo_frame: "post_ad"}%><br>
+    <div class="mb-1 border" style="border-color: red; border-width: 200px">
+      <div class="Header d-flex flex-row">
+          <% if comment.user.avatar.attached? do %>
+         <div>
+           <%= image_tag comment.user.avatar %>
+         </div>
+          <% end %>
+          <% else %>
+          <div class="me-1 rounded-circle bg-success align-items-center align-content-center text-center" style="width: 3vw; height: 3vh;">
+            <%= comment.user.name.first.upcase %><%= comment.user.name.at(1).upcase %>
+          </div>
+          <% end %>
+        <div>
+          <%= comment.user.name %><br>
+        </div>
 
-<% end %>
+      </div>
+      <p>
+
+        <%= comment.body %><br>
+      </p>
+      <div class="d-flex justify-content-end">
+          <%= comment.created_at.strftime("%m/%d %H:%M") %>
+
+      </div>
+
+      <br>
+
+    </div>
+
+
+  <br>
+
 </div>

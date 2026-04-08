@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :user
+  has_many  :comments, dependent: :destroy
   broadcasts_to ->(post) {"posts"}, inserts_by: :prepend
 
   validates :title, presence: true

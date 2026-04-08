@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-    static targets = ['posts', 'frame']
+    static targets = ['posts', 'frame','toggleBtn', 'commentSection']
     static values = {url: String}
     connect() {
         console.log("the url: ", this.urlValue)
@@ -30,13 +30,8 @@ export default class extends Controller {
 
         }
     }
-    toggleComments(){
-    const button = document.getElementById("posts")
-        button.disabled = !button.disabled
-        button.classList.toggle("disabled")
-        console.log(button.disabled)
-        console.log("toggle called")
-        button.setAttribute("aria-disabled", button.disabled)
+    toggleComment(){
+        this.commentSectionTarget.classList.toggle("d-none")
 
     }
 }
