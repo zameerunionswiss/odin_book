@@ -2,16 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57ba38f9-d235-4931-bbd5-8e5ae94336f7" name="Changes" comment="comments dynamically shown based on page, other stuff">
-      <change afterPath="$PROJECT_DIR$/app/javascript/controllers/registration_controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/dashboard_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/dashboard_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/posts_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/posts_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/post.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/post.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/comments/_comment.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/comments/_comment.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/dashboard/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dashboard/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/registrations/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/registrations/new.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/posts/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/posts/_form.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/posts/_post.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/posts/_post.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/posts/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/posts/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/posts/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/posts/new.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/posts/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/posts/show.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/users/_user.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/_user.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +60,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "com.intellij.lang.ruby.rbs.tools.collection.workspace.sync.RbsCollectionUpdateProjectActivity#LAST_UPDATE_TIMESTAMP": "1774855415724",
+    "com.intellij.lang.ruby.rbs.tools.collection.workspace.sync.RbsCollectionUpdateProjectActivity#LAST_UPDATE_TIMESTAMP": "1776062199259",
     "git-widget-placeholder": "fix-sign-up",
     "last_opened_file_path": "/Users/zameer/RubymineProjects/odin_rails/odin_book",
     "nodejs_package_manager_path": "npm",
@@ -183,6 +186,9 @@
       <workItem from="1774861459135" duration="3496000" />
       <workItem from="1774864989912" duration="9042000" />
       <workItem from="1774940320686" duration="45815000" />
+      <workItem from="1775740012347" duration="596000" />
+      <workItem from="1775804353371" duration="597000" />
+      <workItem from="1776062132900" duration="2148000" />
     </task>
     <task id="LOCAL-00001" summary="comments dynamically shown based on page, other stuff">
       <option name="closed" value="true" />

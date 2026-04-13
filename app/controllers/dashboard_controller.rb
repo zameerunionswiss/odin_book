@@ -1,7 +1,7 @@
 class DashboardController < ApplicationController
   before_action :authenticate_user!
   def index
-    @posts = Post.not_mine(current_user)
+    @posts = Post.not_mine(current_user).in_order
 
   end
   def switch

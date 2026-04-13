@@ -1,34 +1,63 @@
-<h1>Dashboard#index</h1>
-<p>Find me in app/views/dashboard/index.html.erb</p>
-
-<%= current_user.email %>
-<%= turbo_frame_tag 'post_ad' do %>
-  <%= "At least we know the turbo frame is working (:" %>>
-<% end %>
 
 
-<div style="padding-top: 10px; padding-bottom: 5px; width: 120px; height: 100px; left:40%; position: relative; align-content: center; align-items: center; text-align: center">
-  <% if current_user.avatar.attached? do %>
-    <%= image_tag current_user.avatar, size: "200x200", alt:'/icon.png', style: "border-radius: 100%;" %>
-  <% end %>
-  <% else %>
-
-    <%= image_tag "/icon.png", size: "100x100", alt:'/icon.png', style: "border-radius: 100%;" %>
-
-  <% end %>
 
 
+
+<body  style="display: flex; flex-direction: column; position: absolute">
+<div id="top" style="position: relative" class="d-flex flex-column justify-content-between align-items-center border-bottom p-3">
+  <div class="d-flex align-items-center gap-2">
+    <%= image_tag '/icon.png', size: "40x40", alt: "Logo" %>
+    <span class="fw-bold fs-4">MyDashboard</span>
+  </div>
+  <nav>
+    <ul class="nav d-flex flex-row gap-3">
+      <li class="nav-item">
+        <%= link_to "Home", root_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Posts", posts_path, class: "nav-link" %>
+      </li>
+<!--      <li class="nav-item">-->
+        <%#= link_to "About", about_path, class: "nav-link" %>
+<!--      </li>-->
+    </ul>
+  </nav>
 </div>
+<div id="content" class="d-flex flex-direction-row">
+
+<div id="left" class="d-flex flex-row gap-3" style="flex: 1">
+  <div class="card shadow-sm border-top">
+    <div class="card-body d-flex flex-column gap-2">
+      <h5 class="card-title fw-bold mb-2">Welcome back, <%= current_user.name %>!</h5>
+      <p class="card-text text-muted">Here's a quick overview of your dashboard.</p>
+      <div class="d-flex gap-2 mt-3">
+        <%= link_to "View Profile", user_path(current_user), class: "btn btn-sm btn-outline-primary", data: { turbo_frame: "_top"} %>
+        <%= link_to "Settings", edit_user_registration_path, class: "btn btn-sm btn-outline-secondary", data: { turbo_frame: "_top"} %>
+        <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-sm btn-outline-danger" %>
+      </div>
+    </div>
+  </div>
+
+</div> <!--end of left-->
+
+<div id="middle" class="d-flex flex-row" style="flex: 2">
 
 <%= turbo_stream_from "posts"%>
-<div id="posts">
+<div id="posts" class="d-flex flex-column gap-1">
   <% @posts.each do |post| %>
     <%= render post %>
     <p>
-      <%= link_to "Show this post", post, data: { turbo_frame: "_top"} %>
+      <%#= link_to "Show this post", post, data: { turbo_frame: "_top"} %>
     </p>
   <% end %>
 </div>
-<p>End of all your posts</p>
-<div><%= link_to 'Go to posts', posts_path, data: { turbo_frame: "_top"} %>></div>
 
+</div> <!--end of middle-->
+<div id="right" class="d-flex flex-column border me-5" style="flex: 1; ">
+  <%= image_tag '/icon.png', size: "120x120", style: "margin-top: 9vh; margin-left: 30%; border-radius: 100%;"%>
+  <p> Show something in this div Lets make this a description of some random thing before moving on to the next</p>
+
+</div> <!--end of right-->
+</div>
+<div id="footer"></div>
+</body>

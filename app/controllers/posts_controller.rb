@@ -1,17 +1,16 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
-
   # GET /posts or /posts.json
   def index
-    @posts = Post.all
-    @page = posts_path
+    @user = current_user
+    @posts = current_user.posts.in_order
+
+
   end
 
   # GET /posts/1 or /posts/1.json
   def show
     @user = User.find_by(email: current_user.email)
-    pp @user.avatar
-    pp @user.avatar.attached?
   end
 
   # GET /posts/new

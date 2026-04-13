@@ -1,14 +1,7 @@
 <% content_for :title, "New post" %>
-<%= turbo_frame_tag "post_ad" do %>
-  <%= "This is a comment" %>
-<% end %>
 
-<h1>New post</h1>
-
-<%= render "form", post: @post %>
-
-<br>
-
+<h1>Add post</h1>
+<%= render "form", post: @post %> <br>
 <div>
   <%= link_to "Back to posts", posts_path %>
 </div>

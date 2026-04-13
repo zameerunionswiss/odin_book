@@ -2,9 +2,7 @@
     <div class="mb-1 border" style="border-color: red; border-width: 200px">
       <div class="Header d-flex flex-row">
           <% if comment.user.avatar.attached? do %>
-         <div>
-           <%= image_tag comment.user.avatar %>
-         </div>
+            <%= image_tag comment.user.avatar, alt: 'No Pic', size: "40x30", style: "border-radius: 10px;" %>
           <% end %>
           <% else %>
           <div class="me-1 rounded-circle bg-success align-items-center align-content-center text-center" style="width: 3vw; height: 3vh;">
@@ -12,16 +10,16 @@
           </div>
           <% end %>
         <div>
-          <%= comment.user.name %><br>
+          <b><%= comment.user.name %></b><br>
         </div>
 
       </div>
       <p>
 
-        <%= comment.body %><br>
+        <%= "~ #{comment.body}" %><br>
       </p>
       <div class="d-flex justify-content-end">
-          <%= comment.created_at.strftime("%m/%d %H:%M") %>
+          <%= comment.created_at.strftime("%d/%m/%y at %H:%M") %>
 
       </div>
 

@@ -5,7 +5,7 @@ class Post < ApplicationRecord
 
   validates :title, presence: true
   validates :user, presence: true
-  scope :recent, -> { order(created_at: :desc) }
+  scope :in_order, -> { order(created_at: :desc) }
   scope :not_mine, -> (user){ where.not(user: user) }
 
 
