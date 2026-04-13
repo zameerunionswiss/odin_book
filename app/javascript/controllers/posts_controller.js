@@ -2,18 +2,26 @@ import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
     static targets = ['posts', 'frame','toggleBtn', 'commentSection']
-    static values = {url: String}
+    static values = {currentPage: String,}
     connect() {
-        console.log("the url: ", this.urlValue)
-        console.log("current target: ", this)
+        // console.log("the current Page-url value: ", )
+        // console.log("current target: ", this)
+        // this.hasCommentSectionTarget ? console.log("this is the comments section") : null
     }
     show(){
         this.hasPostsTarget ? console.log("wow there are posts") : console.log("wow there are not posts/")
 
     }
+    toggleBtnTargetConnected(){
+
+    }
+    commentSectionTargetConnected(){
+        console.log("comment section page, ", this.currentPageValue)
+        const isRoot = this.currentPageValue === "/"
+        this.toggleBtnTarget.textContent = isRoot ? "Show Comments": "Comment"
+    }
     switch_partial(event){
-        // this is to switch the partials
-    const url = event.currentTarget.dataset.url;
+    // const url = event.currentTarget.dataset.url;
     const frame = document.getElementById("post_ad")
         if(this.hasFrameTarget){
             console.log("partial targeted: ", this.frameTarget)
@@ -23,10 +31,10 @@ export default class extends Controller {
             console.log("this is not partial frame to target: ", this.frameTarget)
 
         }
-        if(frame && url){
+        if(frame && this.currentPageValue){
             console.log("frame: ",frame)
-            console.log("url: ",url)
-            frame.src = url
+            console.log("url: ",this.currentPageValue)
+            frame.src = this.currentPageValue
 
         }
     }

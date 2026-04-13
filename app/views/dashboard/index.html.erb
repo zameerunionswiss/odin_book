@@ -1,27 +1,11 @@
 
-
-
-
-
 <body  style="display: flex; flex-direction: column; position: absolute">
 <div id="top" style="position: relative" class="d-flex flex-column justify-content-between align-items-center border-bottom p-3">
   <div class="d-flex align-items-center gap-2">
     <%= image_tag '/icon.png', size: "40x40", alt: "Logo" %>
     <span class="fw-bold fs-4">MyDashboard</span>
   </div>
-  <nav>
-    <ul class="nav d-flex flex-row gap-3">
-      <li class="nav-item">
-        <%= link_to "Home", root_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Posts", posts_path, class: "nav-link" %>
-      </li>
-<!--      <li class="nav-item">-->
-        <%#= link_to "About", about_path, class: "nav-link" %>
-<!--      </li>-->
-    </ul>
-  </nav>
+
 </div>
 <div id="content" class="d-flex flex-direction-row">
 
@@ -40,7 +24,7 @@
 
 </div> <!--end of left-->
 
-<div id="middle" class="d-flex flex-row" style="flex: 2">
+<div id="middle" class="d-flex flex-column" style="flex: 2">
 
 <%= turbo_stream_from "posts"%>
 <div id="posts" class="d-flex flex-column gap-1">
@@ -51,6 +35,18 @@
     </p>
   <% end %>
 </div>
+
+  <% if @pagy.next %>
+    <%= turbo_frame_tag "load_more" do %>
+      <%= link_to "Load More",
+                  dashboard_path(page: @pagy.next),
+                  data: {turbo_stream: true},
+                  class: "btn btn-outline-primary" %>
+
+    <% end %>
+
+<% end %>
+
 
 </div> <!--end of middle-->
 <div id="right" class="d-flex flex-column border me-5" style="flex: 1; ">

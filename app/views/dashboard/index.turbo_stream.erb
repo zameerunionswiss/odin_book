@@ -1,0 +1,19 @@
+<%= turbo_stream.append "posts" do %>
+  <%= render @posts %>
+<% end %>
+
+<%= turbo_stream.replace "load_more" do %>
+<% if @pagy.next  %>
+  <%= turbo_frame_tag "load_more" do %>
+      <%= link_to "Load more...",
+                  dashboard_path(page: @pagy.next),
+                  data: {turbo_stream: true},
+                  class: "btn btn-primary"
+      %>
+    <% end %>
+   <% else %>
+      <%= turbo_frame_tag "load_more" do %>
+        <p class="text-center text-muted">No more posts to load.</p>
+      <% end %>
+  <% end %>
+<% end %>

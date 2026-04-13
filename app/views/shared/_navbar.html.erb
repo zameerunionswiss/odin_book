@@ -1,0 +1,26 @@
+<div id="nav" class="d-flex shadow-sm" style="flex-direction: row; border-bottom: 1px solid green; background-color: #ffffff; border-bottom-right-radius: 10px;">
+  <nav  style="margin-top: auto">
+  <ul class="nav d-flex flex-row gap-3">
+    <li class="nav-item">
+      <%= link_to "Home", root_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Posts", posts_path, class: "nav-link" %>
+    </li>
+    <!--      <li class="nav-item">-->
+    <%#= link_to "About", about_path, class: "nav-link" %>
+    <!--      </li>-->
+  </ul>
+</nav>
+
+  <%= link_to user_path(current_user), class: "text-decoration-none pt-1 d-flex flex-column align-items-center", style:"margin-left: auto; margin-right: 20px;" do %>
+
+    <% if current_user.avatar.attached? %>
+      <%= image_tag current_user.avatar.variant(resize_to_fill: [30, 30]), class: "img-fluid rounded-circle", alt: "User Avatar" %>
+    <% else %>
+      <%= image_tag "/icon.png", class: "rounded-circle", alt: "Default Avatar", size: "30x30" %>
+    <% end %>
+    <b style="color: black"><%= current_user.name %></b>
+
+  <% end %>
+  </div>

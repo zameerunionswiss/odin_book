@@ -5,12 +5,12 @@
             <%= image_tag comment.user.avatar, alt: 'No Pic', size: "40x30", style: "border-radius: 10px;" %>
           <% end %>
           <% else %>
-          <div class="me-1 rounded-circle bg-success align-items-center align-content-center text-center" style="width: 3vw; height: 3vh;">
+          <div class="me-1 rounded-circle bg-success align-items-center align-content-center text-center" style="width: 4vh; height: 4vh;">
             <%= comment.user.name.first.upcase %><%= comment.user.name.at(1).upcase %>
           </div>
           <% end %>
-        <div>
-          <b><%= comment.user.name %></b><br>
+        <div style="margin-top: auto">
+          <b><%= comment.user.email %></b><br>
         </div>
 
       </div>
