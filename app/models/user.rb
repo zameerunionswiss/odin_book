@@ -7,5 +7,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  # has_many:
+  # those who follow you
+  has_many :follower_associations, class_name: "Follow", foreign_key: "follower_id"
+  has_many :followers, through: :follower_associations, source: :follower
+
+  # those who you follow
+  has_many :followed_associations, class_name: "Follow", foreign_key: "followed_id"
+  has_many :followed, class_name: "Follow", through: :followed_associations, source: :followed
 end
