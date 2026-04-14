@@ -7,6 +7,11 @@
         <small class="text-muted"><%= post.created_at.strftime("%b %d, %Y") %></small>
       </div>
 <!--      <h2> the email of the user:<%#= post.user.email %></h2>-->
+      <% if current_user.avatar.attached? %>
+        <%= image_tag current_user.avatar, class: "rounded-circle border", size: "40x40" %>
+      <% else %>
+        <%= image_tag "/icon.png", class: "rounded-circle border", alt: "#{current_user.name}" , size: "40x40" %>
+      <% end %>
       <h5 class="card-title fw-bold mb-2"><%= post.title %></h5>
       <p class="card-text text-muted flex-grow-1"><%= truncate(post.content, length: 120) %></p>
       <div class="d-flex gap-2 mt-3">
@@ -23,13 +28,9 @@
 <!--     display box to add comment  -->
     <div data-posts-target="commentSection" class="d-none mt-3">
         <% if current_page?(root_path)  || current_page?(posts_path) %>
-        <% if post.comments.any? do %>
+        <% if post.comments.any? %>
           <%= render post.comments %>
         <% end %>
-          <% else %>
-            <p class="text-center text-muted py-5">No comments yet.</p>
-        <% end %>
-        <% else %>
           <%= render "comments/form", comment: Comment.new, post: post %>
         <% end %>
 

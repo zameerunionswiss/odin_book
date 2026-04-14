@@ -20,7 +20,13 @@ export default class extends Controller {
         const isRoot = this.currentPageValue === "/"
         this.toggleBtnTarget.textContent = isRoot ? "Show Comments": "Comment"
     }
-    switch_partial(event){
+
+    commentSectionTargetDisconnected(){
+       console.log("The controller has disconnected")
+
+    }
+
+        switch_partial(event){
     // const url = event.currentTarget.dataset.url;
     const frame = document.getElementById("post_ad")
         if(this.hasFrameTarget){

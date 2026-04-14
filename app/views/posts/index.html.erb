@@ -5,18 +5,12 @@
 <% if @posts.any? %>
 
 
-    <div class="row">
-    <button data-controller="posts" data-action="click->posts#show" data-posts-url-value="<%= posts_path %>">
-      <div  data-posts-target="posts"></div>
-      <%= 'This is technically a button used for stimulus controller' %>
-    </button>
+    <div class="last_post">
     <%= render partial: "post", locals: { post: @posts.first } %>
   </div>
 
 <div class="mb-5" style="border-width:10px; border-bottom-color: #B00100; margin-left: 10%; margin-right: 10%">
-  <button data-controller="posts" data-posts-target="frame" data-action="click->posts#switch_partial" data-posts-url-value="<%= posts_path %>" style="top: 20px">
-  <%= link_to "MaGiC button to switch the partial to comments section",  all_comments_path,  data:{turbo_frame: "post_ad"}%>
-  </button>
+
 
   <%= link_to "Add a new Post",new_post_path, class: "btn btn-success" %>
 
