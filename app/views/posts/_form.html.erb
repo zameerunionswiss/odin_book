@@ -1,4 +1,4 @@
-<%= form_with(model: post) do |form| %>
+<%= form_with(model: post, multipart: true)  do |form| %>
   <% if post.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -11,8 +11,15 @@
     </div>
   <% end %>
 
-  <div class="card h-100 shadow-sm border-top">
+  <div data-controller="registration" class="card h-100 shadow-sm border-top">
     <div class="card-body d-flex flex-column ">
+
+      <div>
+        <%= form.label :images, style: "display: block" %>
+        <%= form.file_field :image, accept: "image/*", class: "form-control", autofocus: true, data: {action: "change -> registration#previewAvatar"} %>
+        <img id="avatar-preview" class="d-none mt-2 border" width="200" height="200" style="object-fit: contain;" alt="/icon.png" />
+
+      </div>
 
   <div>
     <%= form.label :title, style: "display: block" %>

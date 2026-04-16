@@ -36,7 +36,7 @@
           <div class="fw-semibold text-dark"><%= current_user.name %></div>
         <% end %>
             </div>
-        <%= button_to "Sign out", destroy_user_session_path,
+        <%# button_to "Sign out", destroy_user_session_path,
                       method: :delete,
                       class: "btn btn-sm btn-outline-danger" %>
         <% end %>

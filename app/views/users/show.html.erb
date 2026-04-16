@@ -49,6 +49,13 @@
       </div>
     </div>
 
+    <%# ── Bio ── %>
+    <% if @user.respond_to?(:bio) && @user.bio.present? %>
+      <p class="profile-bio"><%= @user.bio %></p>
+    <% end %>
+    <p>mt bio</p>
+
+
     <%# ── Stats ── %>
     <hr class="profile-divider">
     <div class="profile-stats">
@@ -66,10 +73,16 @@
       </div>
     </div>
 
-    <%# ── Bio ── %>
-    <% if @user.respond_to?(:bio) && @user.bio.present? %>
-      <p class="profile-bio"><%= @user.bio %></p>
+    <%# Posts Section %>
+    <h2 class="section-title">Posts</h2>
+    <% if @user.posts.any? %>
+      <div class="posts-grid">
+        <% @user.posts.each do |post| %>
+          <%= render "posts/post", post: post %>
+        <% end %>
+      </div>
     <% end %>
+
 
     <%# ── Followers ── %>
     <h2 class="section-title">Followers</h2>
