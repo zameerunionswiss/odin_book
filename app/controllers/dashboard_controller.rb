@@ -1,7 +1,8 @@
 class DashboardController < ApplicationController
   before_action :authenticate_user!
   def index
-    @pagy, @posts = pagy(Post.not_mine(current_user).in_order,limit: 9)
+    @user = current_user
+    @pagy, @posts = pagy(@user.feed.in_order,limit: 9)
 
     respond_to do |format|
       format.html

@@ -1,12 +1,131 @@
-<p style="color: green"><%= notice %></p>
+<% content_for :styles do %>
+  <%= stylesheet_link_tag "profile", media: "all" %>
+<% end %>
 
-<% current_user %>
+<div class="profile-page">
 
-<%= render @user %>
+  <%# Flash notice %>
+  <% if notice.present? %>
+    <div class="notice-bar"><%= notice %></div>
+  <% end %>
 
-<div>
-  <%= link_to "Edit this user", edit_user_path(@user) %> |
-  <%= link_to "Back to users", users_path %>
+  <%# Banner %>
+  <div class="profile-banner"></div>
 
-  <%= button_to "Destroy this user", @user, method: :delete %>
+  <div class="profile-card">
+
+    <%# ── Header: avatar + actions ── %>
+    <div class="profile-header">
+      <div>
+        <div class="avatar-wrap">
+          <div class="avatar">
+            <% if @user.avatar.attached? %>
+              <%= image_tag @user.avatar, alt: @user.name %>
+            <% else %>
+              <%= @user.name&.first&.upcase %>
+            <% end %>
+          </div>
+        </div>
+        <h1 class="profile-name"><%= @user.name %></h1>
+        <p class="profile-handle"><%= @user.email %></p>
+      </div>
+
+      <div class="profile-actions">
+        <% if current_user == @user %>
+          <%= link_to "Edit Profile", edit_user_registration_path, class: "btn-edit" %>
+        <% else %>
+          <% if current_user.following?(@user) %>
+            <%= button_to "Unfollow", follow_path(@user),
+                          method: :delete,
+                          class: "btn-follow btn-follow-secondary",
+                          form: { style: "display:inline" } %>
+          <% else %>
+            <%= button_to "Follow", follows_path(followed_id: @user.id),
+                          method: :post,
+                          class: "btn-follow btn-follow-primary",
+                          form: { style: "display:inline" } %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <%# ── Stats ── %>
+    <hr class="profile-divider">
+    <div class="profile-stats">
+      <div class="stat">
+        <span class="stat-number"><%= @user.followers.count %></span>
+        <span class="stat-label">Followers</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number"><%= @user.following.count %></span>
+        <span class="stat-label">Following</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number"><%= @user.posts.count %></span>
+        <span class="stat-label">Posts</span>
+      </div>
+    </div>
+
+    <%# ── Bio ── %>
+    <% if @user.respond_to?(:bio) && @user.bio.present? %>
+      <p class="profile-bio"><%= @user.bio %></p>
+    <% end %>
+
+    <%# ── Followers ── %>
+    <h2 class="section-title">Followers</h2>
+    <% if @followers.any? %>
+      <div class="people-grid">
+        <% @followers.each do |follower| %>
+          <%= link_to user_path(follower), class: "person-chip" do %>
+            <div class="person-avatar">
+              <% if follower.avatar.attached? %>
+                <%= image_tag follower.avatar, alt: follower.name %>
+              <% else %>
+                <%= follower.name&.first&.upcase %>
+              <% end %>
+            </div>
+            <span class="person-name"><%= follower.name %></span>
+          <% end %>
+        <% end %>
+      </div>
+    <% else %>
+      <p class="empty-state">No followers yet.</p>
+    <% end %>
+
+    <%# ── Following ── %>
+    <h2 class="section-title">Following</h2>
+    <% if @following.any? %>
+      <div class="people-grid">
+        <% @following.each do |followed_user| %>
+          <%= link_to user_path(followed_user), class: "person-chip" do %>
+            <div class="person-avatar">
+              <% if followed_user.avatar.attached? %>
+                <%= image_tag followed_user.avatar, alt: followed_user.name %>
+              <% else %>
+                <%= followed_user.name&.first&.upcase %>
+              <% end %>
+            </div>
+            <span class="person-name"><%= followed_user.name %></span>
+          <% end %>
+        <% end %>
+      </div>
+    <% else %>
+      <p class="empty-state">Not following anyone yet.</p>
+    <% end %>
+
+    <%# ── Danger zone (own profile only) ── %>
+    <% if current_user == @user %>
+      <div class="danger-zone">
+        <div>
+          <div class="danger-zone-label">Danger Zone</div>
+          <div class="danger-zone-desc">Permanently delete your account and all data.</div>
+        </div>
+        <%= button_to "Delete Account", @user,
+                      method: :delete,
+                      class: "btn-danger",
+                      form: { data: { turbo_confirm: "Are you sure? This cannot be undone." } } %>
+      </div>
+    <% end %>
+
+  </div>
 </div>
