@@ -16,12 +16,14 @@
       <% end %>
       <h5 class="card-title fw-bold mb-2"><%= post.title %></h5>
       <p class="card-text text-muted flex-grow-1"><%= truncate(post.content, length: 120) %></p>
-      <div class="d-flex gap-2 mt-3">
+      <% if current_user.id == params[:id] %>
         <%= link_to "Edit", edit_post_path(post), class: "btn btn-sm btn-outline-secondary", data: { turbo_frame: "_top"} %>
         <%= button_to "Delete", post_path(post),
                       method: :delete,
                       data: { turbo_confirm: "Are you sure?" },
                       class: "btn btn-sm btn-outline-danger" %>
+      <% end %>
+      <div class="d-flex gap-2 mt-3">
         <button data-posts-target="toggleBtn" data-action="posts#toggleComment" > Comment</button>
       </div>
     </div>

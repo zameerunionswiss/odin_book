@@ -59,28 +59,27 @@
     <%# ── Stats ── %>
     <hr class="profile-divider">
     <div class="profile-stats">
-      <div class="stat">
+      <%= link_to url_for(controller: "users", action: "show_followers"), class: "stat" do %>
         <span class="stat-number"><%= @user.followers.count %></span>
         <span class="stat-label">Followers</span>
-      </div>
-      <div class="stat">
+      <% end %>
+
+      <%= link_to following_user_path(current_user), class:"stat" do %>
         <span class="stat-number"><%= @user.following.count %></span>
         <span class="stat-label">Following</span>
-      </div>
-      <div class="stat">
+      <% end %>
+
+      <%= link_to follow_path(current_user), class:"stat" do %>
         <span class="stat-number"><%= @user.posts.count %></span>
         <span class="stat-label">Posts</span>
-      </div>
+    <% end %>
+
     </div>
 
     <%# Posts Section %>
     <h2 class="section-title">Posts</h2>
-    <% if @user.posts.any? %>
-      <div class="posts-grid">
-        <% @user.posts.each do |post| %>
-          <%= render "posts/post", post: post %>
-        <% end %>
-      </div>
+    <% if @posts.any? %>
+          <%= render @posts %>
     <% end %>
 
 

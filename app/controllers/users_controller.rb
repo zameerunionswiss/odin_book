@@ -9,8 +9,9 @@ class UsersController < ApplicationController
   # GET /users/1 or /users/1.json
   def show
     @user = User.find(params[:id])
-    @followers = @user.followers
-    @following = @user.following
+    @pagy, @posts = pagy(@user.posts, limit: 4)
+    @pagy, @followers = pagy(@user.followers, limit: 5)
+    @pagy, @following = pagy(@user.following, limit: 5)
   end
 
   # GET /users/new
@@ -59,6 +60,18 @@ class UsersController < ApplicationController
       format.html { redirect_to users_path, notice: "User was successfully destroyed.", status: :see_other }
       format.json { head :no_content }
     end
+  end
+
+
+  def show_following
+
+  end
+
+  def show_followers
+    @user = User.find(params[:id])
+    # pp "User: ...", user
+    @followers = @user.followers
+    render "show_followers", locals: { followers: @followers }
   end
 
   private

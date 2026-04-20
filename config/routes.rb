@@ -3,7 +3,17 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: "users/sessions" }
 
   resources :posts
-  resources :users
+  resources :users do
+    member do
+      get "followers", action: :show_followers
+      get :posts
+      get :comments
+      get :following
+      get :follower
+
+    end
+
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
 
