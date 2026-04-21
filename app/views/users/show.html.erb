@@ -59,12 +59,12 @@
     <%# ── Stats ── %>
     <hr class="profile-divider">
     <div class="profile-stats">
-      <%= link_to url_for(controller: "users", action: "show_followers"), class: "stat" do %>
+      <%= link_to followers_user_path, class: "stat" do %>
         <span class="stat-number"><%= @user.followers.count %></span>
         <span class="stat-label">Followers</span>
       <% end %>
 
-      <%= link_to following_user_path(current_user), class:"stat" do %>
+      <%= link_to following_user_path, class: "stat" do %>
         <span class="stat-number"><%= @user.following.count %></span>
         <span class="stat-label">Following</span>
       <% end %>

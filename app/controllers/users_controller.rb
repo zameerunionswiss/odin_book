@@ -64,7 +64,9 @@ class UsersController < ApplicationController
 
 
   def show_following
-
+    @user = User.find(params[:id])
+    @following = @user.following
+    render "show_following", locals: { followers: @following }
   end
 
   def show_followers

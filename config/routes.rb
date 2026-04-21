@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :users do
     member do
       get "followers", action: :show_followers
+      get "following", action: :show_following
       get :posts
       get :comments
       get :following
