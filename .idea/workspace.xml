@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="57ba38f9-d235-4931-bbd5-8e5ae94336f7" name="Changes" comment="Added Following feature and updated profile UI">
-      <change afterPath="$PROJECT_DIR$/app/views/follows/_follow.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/follows/index.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/follows/show.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/users/show_followers.html.erb" afterDir="false" />
+    <list default="true" id="57ba38f9-d235-4931-bbd5-8e5ae94336f7" name="Changes" comment="edited user related to followers and following">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/follows_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/follows_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/posts/_post.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/posts/_post.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/users/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/edit.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/users/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +194,7 @@
       <workItem from="1776332016128" duration="7627000" />
       <workItem from="1776347295202" duration="5071000" />
       <workItem from="1776667705334" duration="1915000" />
-      <workItem from="1776674966640" duration="6752000" />
+      <workItem from="1776674966640" duration="10303000" />
     </task>
     <task id="LOCAL-00001" summary="comments dynamically shown based on page, other stuff">
       <option name="closed" value="true" />
@@ -234,7 +228,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776091223510</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="edited user related to followers and following">
+      <option name="closed" value="true" />
+      <created>1776686383615</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1776686383615</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,7 +258,8 @@
     <MESSAGE value="Ui things" />
     <MESSAGE value="probably should have made some more commits." />
     <MESSAGE value="Added Following feature and updated profile UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Following feature and updated profile UI" />
+    <MESSAGE value="edited user related to followers and following" />
+    <option name="LAST_COMMIT_MESSAGE" value="edited user related to followers and following" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

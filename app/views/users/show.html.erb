@@ -69,7 +69,7 @@
         <span class="stat-label">Following</span>
       <% end %>
 
-      <%= link_to follow_path(current_user), class:"stat" do %>
+      <%= link_to posts_path(current_user), class:"stat" do %>
         <span class="stat-number"><%= @user.posts.count %></span>
         <span class="stat-label">Posts</span>
     <% end %>
